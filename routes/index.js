@@ -1,10 +1,11 @@
 import 'dotenv/config';
 import express from "express";
+import `../cityController` 
+
 const router = express.Router();
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/', cityController.getCities) 
+
 
 export default router;
