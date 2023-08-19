@@ -45,7 +45,7 @@ const cityController{
         });
       const savedCity = await newCity.save();
 
-        res.status(200).json(savedPersona);
+        res.status(200).json(savedCity);
       }
     } 
      
