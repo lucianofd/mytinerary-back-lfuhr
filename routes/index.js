@@ -1,26 +1,21 @@
 import 'dotenv/config';
 import express from "express";
 import '../controllers/cityController';
+import cityController from '../controllers/cityController';
 const router = express.Router();
 
-/* GET home page. */
-router.post('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
 
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-})
-router.get('/:id', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.post('/cities', cityController.postCity);
 
-router.put('/:id', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/cities', cityController.getCities );
 
-router.delete('/:id', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+router.get('/cities/:name', cityController.getOneCity);
+
+router.get('/cities/:id', cityController.getOneCity);
+  
+router.put('/cities/:id', cityController.putCity );
+
+router.delete('/cities/:id', cityController.deleteCity );
+ 
 
 export default router;
