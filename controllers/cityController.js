@@ -81,7 +81,7 @@ const cityController = {
 
   //Modificar registro
 
-  putCity: async(req, res, next) =>{
+  updateCity: async(req, res, next) =>{
     const { id } = req.params;
     const updateData = req.body;
 
