@@ -5,17 +5,17 @@ import cityController from '../controllers/cityController';
 const router = express.Router();
 
 
-router.post('/cities', cityController.postCity);
+router.post('cities', cityController.postCity);
 
-router.get('/cities', cityController.getCities );
+router.get('cities', cityController.getCities );
 
-router.get('/cities/:name', cityController.getOneCity);
+router.get('cities/:name', cityController.getOneCity);
 
-router.get('/cities/:id', cityController.getOneCity);
+router.get('cities/:id', cityController.getOneCity);
   
-router.put('/cities/:id', cityController.putCity );
+router.put('cities/:id', cityController.putCity );
 
-router.delete('/cities/:id', cityController.deleteCity );
+router.delete('cities/:id', cityController.deleteCity );
  
 
 export default router;
