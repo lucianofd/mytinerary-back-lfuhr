@@ -5,13 +5,11 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import { _filename, __dirname } from './utils.js';// Corregido
 import path from 'path';
-
 import indexRouter from './routes/index.js'; // Corregido
 import usersRouter from './routes/users.js'; // Corregido
-/*
-let indexRouter = './routes/index.js';
-let usersRouter = './routes/users.js';
-*/
+import './config/database.js'
+
+
 const app = express();
 
 // view engine setup
