@@ -8,9 +8,21 @@ import path from 'path';
 import indexRouter from './routes/index.js'; // Corregido
 import usersRouter from './routes/users.js'; // Corregido
 import './config/database.js'
-
+import cors from 'cors';
 
 const app = express();
+
+
+// Configurar CORS
+const corsOptions = {
+  origin: 'http://localhost:3000',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, 
+  optionsSuccessStatus: 204, 
+};
+
+// Habilitar CORS
+app.use(cors(corsOptions));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,8 +34,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('api/cities', indexRouter);
+app.use('api/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
